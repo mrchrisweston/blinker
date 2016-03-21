@@ -425,14 +425,74 @@ a:hover {
 
 /*page structure*/
 /* -- Home page -- */
-/* line 4, ../sass/_home.scss */
+/* line 5, ../sass/_home.scss */
+body.active .background {
+  background: linear-gradient(270deg, #40aff3, #3bbef1, #67ba77, #45acb2, #671ee4);
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 52s ease infinite;
+  -moz-animation: AnimationName 52s ease infinite;
+  animation: AnimationName 52s ease infinite;
+  @-webkit-keyframes AnimationName {
+    /* line 14, ../sass/_home.scss */
+    0% {
+      background-position: 0% 50%;
+    }
+
+    /* line 15, ../sass/_home.scss */
+    50% {
+      background-position: 100% 50%;
+    }
+
+    /* line 16, ../sass/_home.scss */
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+  @-moz-keyframes AnimationName {
+    /* line 19, ../sass/_home.scss */
+    0% {
+      background-position: 0% 50%;
+    }
+
+    /* line 20, ../sass/_home.scss */
+    50% {
+      background-position: 100% 50%;
+    }
+
+    /* line 21, ../sass/_home.scss */
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+  @keyframes AnimationName {
+    /* line 24, ../sass/_home.scss */
+    0% {
+      background-position: 0% 50%;
+    }
+
+    /* line 25, ../sass/_home.scss */
+    50% {
+      background-position: 100% 50%;
+    }
+
+    /* line 26, ../sass/_home.scss */
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+}
+
+/* line 31, ../sass/_home.scss */
 .background {
   height: 100vh;
   width: 100vw;
   border: 25px solid white;
   background-color: #1e77e4;
 }
-/* line 10, ../sass/_home.scss */
+/* line 37, ../sass/_home.scss */
 .background .shader {
   height: 100vh;
   width: 100vw;
@@ -442,20 +502,20 @@ a:hover {
   background-repeat: no-repeat;
   background-position: right bottom;
 }
-/* line 19, ../sass/_home.scss */
+/* line 46, ../sass/_home.scss */
 .background .shader #header {
   color: #fff;
   width: 100%;
   position: relative;
   padding: 20px;
 }
-/* line 25, ../sass/_home.scss */
+/* line 52, ../sass/_home.scss */
 .background .shader #header .logo {
   width: 80px;
   height: 40px;
   float: left;
 }
-/* line 31, ../sass/_home.scss */
+/* line 58, ../sass/_home.scss */
 .background .shader #header .info {
   font-size: 14px;
   line-height: 13px;
@@ -463,7 +523,7 @@ a:hover {
   float: right;
   border-bottom: 1px solid white;
 }
-/* line 42, ../sass/_home.scss */
+/* line 69, ../sass/_home.scss */
 .background .shader #main #start {
   text-align: center;
   width: 300px;
@@ -476,7 +536,7 @@ a:hover {
   -moz-text-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
   text-shadow: 24px 24px 30px rgba(0, 0, 0, 0.35);
 }
-/* line 57, ../sass/_home.scss */
+/* line 84, ../sass/_home.scss */
 .background .shader #main #start h1 {
   width: 150px;
   line-height: 45px;
@@ -487,7 +547,7 @@ a:hover {
   letter-spacing: 10px;
   margin-top: 68px;
 }
-/* line 70, ../sass/_home.scss */
+/* line 97, ../sass/_home.scss */
 .background .shader #main #what {
   display: none;
   position: absolute;
@@ -499,74 +559,74 @@ a:hover {
   width: 240px;
   margin: -150px 0 0 -120px;
 }
-/* line 83, ../sass/_home.scss */
+/* line 110, ../sass/_home.scss */
 .background .shader #main #what h1 {
   font-size: 29px;
   line-height: 0.9;
 }
-/* line 88, ../sass/_home.scss */
+/* line 115, ../sass/_home.scss */
 .background .shader #main #what p {
   font-size: 14px;
   line-height: 1.2;
   margin-top: 15px;
   font-weight: 500;
 }
-/* line 94, ../sass/_home.scss */
+/* line 121, ../sass/_home.scss */
 .background .shader #main #what p.small {
   font-size: 12px;
   margin-top: 10px;
   line-height: 1;
 }
-/* line 100, ../sass/_home.scss */
+/* line 127, ../sass/_home.scss */
 .background .shader #main #what p.close {
   font-size: 18px;
   line-height: 1;
   margin-top: 30px;
 }
-/* line 105, ../sass/_home.scss */
+/* line 132, ../sass/_home.scss */
 .background .shader #main #what p.close span {
   border-bottom: 1px solid white;
   line-height: 17px;
 }
 @media (min-width: 665px) {
-  /* line 70, ../sass/_home.scss */
+  /* line 97, ../sass/_home.scss */
   .background .shader #main #what {
     height: 80px;
     width: 560px;
     height: 300px;
     margin: -150px 0 0 -280px;
   }
-  /* line 119, ../sass/_home.scss */
+  /* line 146, ../sass/_home.scss */
   .background .shader #main #what h1 {
     font-size: 68px;
     line-height: 0.9;
   }
-  /* line 124, ../sass/_home.scss */
+  /* line 151, ../sass/_home.scss */
   .background .shader #main #what p {
     font-size: 21px;
     line-height: 1.2;
     margin-top: 15px;
     font-weight: 500;
   }
-  /* line 130, ../sass/_home.scss */
+  /* line 157, ../sass/_home.scss */
   .background .shader #main #what p.small {
     font-size: 16px;
     margin-top: 10px;
     line-height: 1;
   }
-  /* line 136, ../sass/_home.scss */
+  /* line 163, ../sass/_home.scss */
   .background .shader #main #what p.close {
     font-size: 18px;
     line-height: 1;
     margin-top: 30px;
   }
-  /* line 141, ../sass/_home.scss */
+  /* line 168, ../sass/_home.scss */
   .background .shader #main #what p.close span {
     border-bottom: 1px solid white;
     line-height: 17px;
   }
 }
-/* line 151, ../sass/_home.scss */
+/* line 178, ../sass/_home.scss */
 .background .shader #main #eye_area {
   display: none;
   text-align: center;
@@ -577,17 +637,17 @@ a:hover {
   top: 50%;
   margin: -45px 0 0 -150px;
 }
-/* line 163, ../sass/_home.scss */
+/* line 190, ../sass/_home.scss */
 .background .shader #main #eye_area #Page-1 {
   -webkit-box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
 }
-/* line 169, ../sass/_home.scss */
+/* line 196, ../sass/_home.scss */
 .background .shader #main #eye_area #open {
   opacity: 0;
 }
-/* line 175, ../sass/_home.scss */
+/* line 202, ../sass/_home.scss */
 .background .shader #footer {
   bottom: 25px;
   padding: 20px;
@@ -596,12 +656,12 @@ a:hover {
   height: 120px;
 }
 @media (min-width: 665px) {
-  /* line 175, ../sass/_home.scss */
+  /* line 202, ../sass/_home.scss */
   .background .shader #footer {
     height: 80px;
   }
 }
-/* line 187, ../sass/_home.scss */
+/* line 214, ../sass/_home.scss */
 .background .shader #footer .controls {
   position: absolute;
   height: 50px;
@@ -613,7 +673,7 @@ a:hover {
   -moz-box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
 }
-/* line 199, ../sass/_home.scss */
+/* line 226, ../sass/_home.scss */
 .background .shader #footer .controls .sound {
   width: 15px;
   height: 15px;
@@ -624,7 +684,7 @@ a:hover {
   float: left;
   margin-left: 5px;
 }
-/* line 210, ../sass/_home.scss */
+/* line 237, ../sass/_home.scss */
 .background .shader #footer .controls .player {
   width: 15px;
   height: 15px;
@@ -635,7 +695,7 @@ a:hover {
   float: left;
   margin-left: 20px;
 }
-/* line 222, ../sass/_home.scss */
+/* line 249, ../sass/_home.scss */
 .background .shader #footer .credits {
   color: #fff;
   font-size: 14px;
@@ -648,17 +708,17 @@ a:hover {
   max-width: 400px;
   text-align: center;
 }
-/* line 234, ../sass/_home.scss */
+/* line 261, ../sass/_home.scss */
 .background .shader #footer .credits a {
   border-bottom: 1px solid white;
 }
-/* line 239, ../sass/_home.scss */
+/* line 266, ../sass/_home.scss */
 .background .shader #footer .share {
   float: right;
   margin-right: 25px;
 }
 
-/* line 248, ../sass/_home.scss */
+/* line 275, ../sass/_home.scss */
 .animated {
   animation-duration: 2.5s;
   animation-fill-mode: both;
@@ -666,23 +726,23 @@ a:hover {
 }
 
 @keyframes pulse {
-  /* line 255, ../sass/_home.scss */
+  /* line 282, ../sass/_home.scss */
   0% {
     transform: scale(1);
   }
 
-  /* line 256, ../sass/_home.scss */
+  /* line 283, ../sass/_home.scss */
   50% {
     transform: scale(1.1);
   }
 
-  /* line 257, ../sass/_home.scss */
+  /* line 284, ../sass/_home.scss */
   100% {
     transform: scale(1);
   }
 }
 
-/* line 259, ../sass/_home.scss */
+/* line 286, ../sass/_home.scss */
 .pulse {
   animation-name: pulse;
   animation-duration: 4s;
