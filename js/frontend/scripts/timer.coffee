@@ -66,8 +66,13 @@ $ ->
 		$('#what').addClass('what--hidden')
 		$('#what').fadeOut(300, () ->
 
-			# Display Start button
-			$('#start').fadeIn(300)
+			# Timer already running, show eye
+			if $('body').hasClass('active')
+				$('#eye_area').fadeIn(300)
+
+			# Timer not running, show start button
+			else
+				$('#start').fadeIn(300)
 			)
 
 	# User presses the Start button, begin timer
@@ -89,10 +94,12 @@ $ ->
 
 		# If What is displayed do nothing
 		if $('#what').is(':visible')
-			console.log 'return'
+			$('.close-what').trigger('click')
+			$('.info a').text('What the what?')
 			return
 
-		StopAllTimers(false)
+		# Change "What" text to say "Hide" when open
+		$('.info a').text('Hide')
 
 		# Start is showing
 		if $('#start').is(':visible')

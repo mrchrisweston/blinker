@@ -55,7 +55,11 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
       ev.preventDefault();
       $('#what').addClass('what--hidden');
       return $('#what').fadeOut(300, function() {
-        return $('#start').fadeIn(300);
+        if ($('body').hasClass('active')) {
+          return $('#eye_area').fadeIn(300);
+        } else {
+          return $('#start').fadeIn(300);
+        }
       });
     });
     $('#start .text').bind('click', function(ev) {
@@ -67,10 +71,11 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     });
     return $('.info').bind('click', function(ev) {
       if ($('#what').is(':visible')) {
-        console.log('return');
+        $('.close-what').trigger('click');
+        $('.info a').text('What the what?');
         return;
       }
-      StopAllTimers(false);
+      $('.info a').text('Hide');
       if ($('#start').is(':visible')) {
         console.log('start visible');
         return $('#start').fadeOut(300, function() {
