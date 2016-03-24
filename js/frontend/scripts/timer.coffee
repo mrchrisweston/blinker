@@ -47,9 +47,13 @@ $ ->
 		# Reset to show the Start button
 		$('#eye_area').fadeOut(300, () ->
 
-			# Display Start button
+			# Display Start button if specified
 			if showStart
 				$('#start').fadeIn(300)
+
+			# If "what" is showing hide it
+			if $('#what').is(':visible')
+				$('#what').fadeOut(300)
 			)
 
 		# Flag timer has stopped
@@ -57,6 +61,11 @@ $ ->
 
 	# User has stopped the timer
 	$('.controls .player').bind 'click', (ev) =>
+ 
+		# Make sure the "what" text is reset
+		if $('body').hasClass('active')
+			$('.info a').text('What the what?')
+
 		# Stop all timers
 		StopAllTimers(true)
 

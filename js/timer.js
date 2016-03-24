@@ -40,7 +40,10 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         console.log('timers stopped');
         $('#eye_area').fadeOut(300, function() {
           if (showStart) {
-            return $('#start').fadeIn(300);
+            $('#start').fadeIn(300);
+          }
+          if ($('#what').is(':visible')) {
+            return $('#what').fadeOut(300);
           }
         });
         return $('body').removeClass('active');
@@ -48,6 +51,9 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     })(this);
     $('.controls .player').bind('click', (function(_this) {
       return function(ev) {
+        if ($('body').hasClass('active')) {
+          $('.info a').text('What the what?');
+        }
         return StopAllTimers(true);
       };
     })(this));
