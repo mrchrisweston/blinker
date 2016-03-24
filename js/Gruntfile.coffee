@@ -9,13 +9,13 @@ module.exports = (grunt) ->
             frontend:
                 files:
                     'frontend/scripts/tmp/timer.js': [
-                        'frontend/scripts/site.coffee'
+                        'frontend/scripts/timer.coffee'
                     ]
 
         concat:
             frontend:
                 files:
-                    '<%= pkg.www %>/scripts/timer.js': [
+                    'timer.js': [
                         'vendor/scripts/jquery-2.1.4.min.js'
                         'frontend/scripts/tmp/timer.js'
                         ]
