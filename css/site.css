@@ -688,7 +688,7 @@ body.active .background {
 .background .shader #footer .controls .player {
   width: 15px;
   height: 15px;
-  background-image: url("../img/stop.png");
+  background-image: url("../img/play.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -717,8 +717,13 @@ body.active .background {
   float: right;
   margin-right: 25px;
 }
+/* line 270, ../sass/_home.scss */
+.background .shader #footer .share div {
+  float: left;
+  margin-left: 10px;
+}
 
-/* line 275, ../sass/_home.scss */
+/* line 280, ../sass/_home.scss */
 .animated {
   animation-duration: 2.5s;
   animation-fill-mode: both;
@@ -726,23 +731,23 @@ body.active .background {
 }
 
 @keyframes pulse {
-  /* line 282, ../sass/_home.scss */
+  /* line 287, ../sass/_home.scss */
   0% {
     transform: scale(1);
   }
 
-  /* line 283, ../sass/_home.scss */
+  /* line 288, ../sass/_home.scss */
   50% {
     transform: scale(1.1);
   }
 
-  /* line 284, ../sass/_home.scss */
+  /* line 289, ../sass/_home.scss */
   100% {
     transform: scale(1);
   }
 }
 
-/* line 286, ../sass/_home.scss */
+/* line 291, ../sass/_home.scss */
 .pulse {
   animation-name: pulse;
   animation-duration: 4s;
