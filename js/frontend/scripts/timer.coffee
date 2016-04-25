@@ -4,12 +4,14 @@ $ ->
 	twentySecInterval = null
 
 	setTwentySecInterval = () =>
-		console.log '20 sec break'
 		# The 20 mins has come to an end
 		clearInterval(twentyMinInterval)
 
 		# Add class to open the eye
 		$('#eye_area').addClass('eye-area--open')
+
+		# Fire off the alert sound
+		$('.alert-sound').trigger('play')
 
 		# Set 20 second timer
 		twentySecInterval = setInterval (->
@@ -18,7 +20,6 @@ $ ->
 		), 20000
 
 	setTwentyMinInterval = () =>
-		console.log 'Start twenty mins'
 		# Clear the 20 sec timer
 		clearInterval(twentySecInterval)
 
@@ -42,8 +43,6 @@ $ ->
 		unless $('body').hasClass('active')
 			return
 
-		console.log 'timers stopped'
-
 		# Reset to show the Start button
 		$('#eye_area').fadeOut(300, () ->
 
@@ -66,14 +65,22 @@ $ ->
 		if $('body').hasClass('active')
 			$('.info a').text('What the what?')
 
-		# Stop all timers
-		StopAllTimers(true)
+		# Stop/Start timer
+		if $('body').hasClass('active')
+			$('.controls .player').css('background-image', 'url("../img/play.png")')
+			$('#start').show()
+			StopAllTimers()
+		else
+			$('#start .text').trigger('click')
 
 	# Hide the intro message and display the Start button
 	$('.close-what').bind 'click', (ev) ->
 		ev.preventDefault()
 		$('#what').addClass('what--hidden')
 		$('#what').fadeOut(300, () ->
+
+			# Reset 'what the what' text
+			$('.info a').text('What the what?')		
 
 			# Timer already running, show eye
 			if $('body').hasClass('active')
@@ -98,6 +105,9 @@ $ ->
 		# Flag if timer is running
 		$('body').addClass('active')
 
+		# Update controls icon
+		$('.controls .player').css('background-image', 'url("../img/stop.png")')
+
 	# Display the info and stop the timer
 	$('.info').bind 'click', (ev) ->
 
@@ -108,11 +118,10 @@ $ ->
 			return
 
 		# Change "What" text to say "Hide" when open
-		$('.info a').text('Hide')
+		$('.info a').text('close')
 
 		# Start is showing
 		if $('#start').is(':visible')
-			console.log 'start visible'
 			$('#start').fadeOut(300, () ->
 
 				# Display the What info
@@ -120,7 +129,6 @@ $ ->
 				)
 		# Eye is showing
 		else
-			console.log 'eye visible'
 			$('#eye_area').fadeOut(300, () ->
 
 				# Display the What info

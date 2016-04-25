@@ -10,9 +10,9 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     twentySecInterval = null;
     setTwentySecInterval = (function(_this) {
       return function() {
-        console.log('20 sec break');
         clearInterval(twentyMinInterval);
         $('#eye_area').addClass('eye-area--open');
+        $('.alert-sound').trigger('play');
         return twentySecInterval = setInterval((function() {
           setTwentyMinInterval();
         }), 20000);
@@ -20,7 +20,6 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     })(this);
     setTwentyMinInterval = (function(_this) {
       return function() {
-        console.log('Start twenty mins');
         clearInterval(twentySecInterval);
         $('#eye_area').removeClass('eye-area--open');
         return twentyMinInterval = setInterval((function() {
@@ -37,7 +36,6 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         if (!$('body').hasClass('active')) {
           return;
         }
-        console.log('timers stopped');
         $('#eye_area').fadeOut(300, function() {
           if (showStart) {
             $('#start').fadeIn(300);
@@ -54,13 +52,20 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         if ($('body').hasClass('active')) {
           $('.info a').text('What the what?');
         }
-        return StopAllTimers(true);
+        if ($('body').hasClass('active')) {
+          $('.controls .player').css('background-image', 'url("../img/play.png")');
+          $('#start').show();
+          return StopAllTimers();
+        } else {
+          return $('#start .text').trigger('click');
+        }
       };
     })(this));
     $('.close-what').bind('click', function(ev) {
       ev.preventDefault();
       $('#what').addClass('what--hidden');
       return $('#what').fadeOut(300, function() {
+        $('.info a').text('What the what?');
         if ($('body').hasClass('active')) {
           return $('#eye_area').fadeIn(300);
         } else {
@@ -73,7 +78,8 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         return $('#eye_area').fadeIn(300);
       });
       setTwentyMinInterval();
-      return $('body').addClass('active');
+      $('body').addClass('active');
+      return $('.controls .player').css('background-image', 'url("../img/stop.png")');
     });
     return $('.info').bind('click', function(ev) {
       if ($('#what').is(':visible')) {
@@ -81,14 +87,12 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         $('.info a').text('What the what?');
         return;
       }
-      $('.info a').text('Hide');
+      $('.info a').text('close');
       if ($('#start').is(':visible')) {
-        console.log('start visible');
         return $('#start').fadeOut(300, function() {
           return $('#what').fadeIn(300);
         });
       } else {
-        console.log('eye visible');
         return $('#eye_area').fadeOut(300, function() {
           return $('#what').fadeIn(300);
         });
