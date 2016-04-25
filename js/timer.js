@@ -5,7 +5,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 
 (function() {
   $(function() {
-    var StopAllTimers, setTwentyMinInterval, setTwentySecInterval, twentyMinInterval, twentySecInterval;
+    var StopAllTimers, TriggerNotification, notificationRequest, setTwentyMinInterval, setTwentySecInterval, twentyMinInterval, twentySecInterval;
     twentyMinInterval = null;
     twentySecInterval = null;
     setTwentySecInterval = (function(_this) {
@@ -13,6 +13,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         clearInterval(twentyMinInterval);
         $('#eye_area').addClass('eye-area--open');
         $('.alert-sound').trigger('play');
+        TriggerNotification();
         return twentySecInterval = setInterval((function() {
           setTwentyMinInterval();
         }), 20000);
@@ -81,7 +82,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
       $('body').addClass('active');
       return $('.controls .player').css('background-image', 'url("../img/stop.png")');
     });
-    return $('.info').bind('click', function(ev) {
+    $('.info').bind('click', function(ev) {
       if ($('#what').is(':visible')) {
         $('.close-what').trigger('click');
         $('.info a').text('What the what?');
@@ -98,6 +99,31 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         });
       }
     });
+    notificationRequest = (function(_this) {
+      return function() {
+        var notification;
+        if (!('Notification' in window)) {
+          return alert('This browser does not support system notifications');
+        } else if (Notification.permission === 'granted') {
+          return notification = new Notification('Hi there!');
+        } else if (Notification.permission !== 'denied') {
+          return Notification.requestPermission(function(permission) {
+            var notification;
+            if (permission === 'granted') {
+              notification = new Notification('Notifications on!');
+            }
+          });
+        }
+      };
+    })(this);
+    return;
+    notificationRequest();
+    return TriggerNotification = (function(_this) {
+      return function() {
+        var notification;
+        return notification = new Notification('Look away from the screen now.');
+      };
+    })(this);
   });
 
 }).call(this);

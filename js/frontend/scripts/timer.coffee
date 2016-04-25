@@ -13,6 +13,9 @@ $ ->
 		# Fire off the alert sound
 		$('.alert-sound').trigger('play')
 
+		# fire off notification
+		TriggerNotification()
+
 		# Set 20 second timer
 		twentySecInterval = setInterval (->
 		  setTwentyMinInterval()
@@ -134,3 +137,30 @@ $ ->
 				# Display the What info
 				$('#what').fadeIn(300)
 				)
+
+	# Notification
+	notificationRequest = () =>
+	  	# Let's check if the browser supports notifications
+	  	if !('Notification' of window)
+	    	alert 'This browser does not support system notifications'
+
+	  	else if Notification.permission == 'granted'
+	    	# If it's okay let's create a notification
+	    	notification = new Notification('Hi there!')
+	  
+	  	else if Notification.permission != 'denied'
+	    	Notification.requestPermission (permission) ->
+	      		`var notification`
+	      		# If the user accepts, let's create a notification
+	      		if permission == 'granted'
+	        		notification = new Notification('Notifications on!')
+	      			return
+
+		# Finally, if the user has denied notifications and you 
+		# want to be respectful there is no need to bother them any more.
+		return
+
+	notificationRequest()
+
+	TriggerNotification = () =>
+  		notification = new Notification('Look away from the screen now.')
