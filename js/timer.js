@@ -5,7 +5,18 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 
 (function() {
   $(function() {
-    var StopAllTimers, TriggerNotification, notificationRequest, setTwentyMinInterval, setTwentySecInterval, twentyMinInterval, twentySecInterval;
+    var StopAllTimers, TriggerNotification, setTwentyMinInterval, setTwentySecInterval, twentyMinInterval, twentySecInterval;
+    TriggerNotification = (function(_this) {
+      return function() {
+        var notification;
+        if (Notification) {
+          console.log('run notification!');
+          return notification = new Notification('Blinker', {
+            body: 'Take a break from the screen!'
+          });
+        }
+      };
+    })(this);
     twentyMinInterval = null;
     twentySecInterval = null;
     setTwentySecInterval = (function(_this) {
@@ -25,7 +36,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         $('#eye_area').removeClass('eye-area--open');
         return twentyMinInterval = setInterval((function() {
           setTwentySecInterval();
-        }), 1200000);
+        }), 1000);
       };
     })(this);
     StopAllTimers = (function(_this) {
@@ -74,10 +85,16 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         }
       });
     });
-    $('#start .text').bind('click', function(ev) {
+    $('#start a').bind('click', function(ev) {
       $('#start').fadeOut(300, function() {
         return $('#eye_area').fadeIn(300);
       });
+      if (!Notification) {
+        console.log('permission not granted');
+        Notification.requestPermission();
+      } else {
+        console.log('permission granted');
+      }
       setTwentyMinInterval();
       $('body').addClass('active');
       return $('.controls .player').css('background-image', 'url("../img/stop.png")');
@@ -99,31 +116,13 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         });
       }
     });
-    notificationRequest = (function(_this) {
-      return function() {
-        var notification;
-        if (!('Notification' in window)) {
-          return alert('This browser does not support system notifications');
-        } else if (Notification.permission === 'granted') {
-          return notification = new Notification('Hi there!');
-        } else if (Notification.permission !== 'denied') {
-          return Notification.requestPermission(function(permission) {
-            var notification;
-            if (permission === 'granted') {
-              notification = new Notification('Notifications on!');
-            }
-          });
-        }
-      };
-    })(this);
-    return;
-    notificationRequest();
-    return TriggerNotification = (function(_this) {
-      return function() {
-        var notification;
-        return notification = new Notification('Look away from the screen now.');
-      };
-    })(this);
+    console.log('ask permission');
+    if (Notification.permission !== 'granted') {
+      console.log('not yet granted');
+      Notification.requestPermission();
+    } else {
+      console.log('already granted');
+    }
   });
 
 }).call(this);

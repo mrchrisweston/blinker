@@ -1,4 +1,11 @@
 $ ->
+	TriggerNotification = () =>
+		if Notification
+			console.log 'run notification!'
+
+			notification = new Notification('Blinker',
+				body: 'Take a break from the screen!')
+
 	# Timers, made global so every function has access to it
 	twentyMinInterval = null
 	twentySecInterval = null
@@ -33,7 +40,9 @@ $ ->
 		twentyMinInterval = setInterval (->
 		  setTwentySecInterval()
 		  return
-		), 1200000
+		), 1000
+
+	#1200000
 
 	StopAllTimers = (showStart) =>
 		# Stop all timers
@@ -95,12 +104,19 @@ $ ->
 			)
 
 	# User presses the Start button, begin timer
-	$('#start .text').bind 'click', (ev) ->
+	$('#start a').bind 'click', (ev) ->
 		$('#start').fadeOut(300, () ->
 
 			# Display the eye
 			$('#eye_area').fadeIn(300)
 			)
+
+		# ask for notification permission
+		if !Notification
+			console.log('permission not granted')
+			Notification.requestPermission()
+		else
+			console.log 'permission granted'
 		
 		# Start the 20 min timer
 		setTwentyMinInterval()
@@ -138,29 +154,13 @@ $ ->
 				$('#what').fadeIn(300)
 				)
 
-	# Notification
-	notificationRequest = () =>
-	  	# Let's check if the browser supports notifications
-	  	if !('Notification' of window)
-	    	alert 'This browser does not support system notifications'
+	# Notification permission
+	console.log 'ask permission'
+	if Notification.permission != 'granted'
+		console.log('not yet granted')
+		Notification.requestPermission()
+	else
+		console.log('already granted')
+	return
 
-	  	else if Notification.permission == 'granted'
-	    	# If it's okay let's create a notification
-	    	notification = new Notification('Hi there!')
-	  
-	  	else if Notification.permission != 'denied'
-	    	Notification.requestPermission (permission) ->
-	      		`var notification`
-	      		# If the user accepts, let's create a notification
-	      		if permission == 'granted'
-	        		notification = new Notification('Notifications on!')
-	      			return
 
-		# Finally, if the user has denied notifications and you 
-		# want to be respectful there is no need to bother them any more.
-		return
-
-	notificationRequest()
-
-	TriggerNotification = () =>
-  		notification = new Notification('Look away from the screen now.')
