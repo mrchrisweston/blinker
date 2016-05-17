@@ -6,21 +6,21 @@ body.active{
         background: linear-gradient(270deg, #40aff3, #3bbef1, #67ba77, #45acb2, #671ee4);
         background-size: 1000% 1000%;
 
-        -webkit-animation: AnimationName 52s ease infinite;
-        -moz-animation: AnimationName 52s ease infinite;
-        animation: AnimationName 52s ease infinite;
+        -webkit-animation: Background 2s ease infinite;
+        -moz-animation: Background 2s ease infinite;
+        animation: Background 2s ease infinite;
 
-        @-webkit-keyframes AnimationName {
+        @-webkit-keyframes Background {
             0%{background-position:0% 50%}
             50%{background-position:100% 50%}
             100%{background-position:0% 50%}
         }
-        @-moz-keyframes AnimationName {
+        @-moz-keyframes Background {
             0%{background-position:0% 50%}
             50%{background-position:100% 50%}
             100%{background-position:0% 50%}
         }
-        @keyframes AnimationName { 
+        @keyframes Background { 
             0%{background-position:0% 50%}
             50%{background-position:100% 50%}
             100%{background-position:0% 50%}
@@ -187,15 +187,25 @@ body.active{
                 top:50%;
                 margin:-45px 0 0 -150px; 
 
-                #Page-1{
-                -webkit-box-shadow: 24px 24px 30px 0px rgba(0,0,0,0.15);
-                -moz-box-shadow: 24px 24px 30px 0px rgba(0,0,0,0.15);
-                box-shadow: 24px 24px 30px 0px rgba(0,0,0,0.15);
+                .eye-closed{
+                    position:absolute;
+                    width:140px;
+                    height:92px;
+                    left:50%;
+                    top:50%;
+                    margin:-14px 0 0 -70px; 
                 }
 
-                #open{
-                    opacity:0;
+                .eye-open{
+                    position:absolute;
+                    width:140px;
+                    height:92px;
+                    left:50%;
+                    top:50%;
+                    margin:-59px 0 0 -70px; 
+
                 }
+
             }
         }
 
@@ -232,6 +242,7 @@ body.active{
                     background-size:cover;
                     float:left;
                     margin-left:5px;
+                    cursor:pointer;
                 }
 
                 .player{
@@ -243,6 +254,7 @@ body.active{
                     background-size:cover;
                     float:left;
                     margin-left:20px;
+                    cursor:pointer;
                 }
             }
 
