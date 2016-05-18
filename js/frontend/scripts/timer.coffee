@@ -40,9 +40,7 @@ $ ->
 		twentyMinInterval = setInterval (->
 		  setTwentySecInterval()
 		  return
-		), 1000
-
-	#1200000
+		), 1200000
 
 	StopAllTimers = (showStart) =>
 		# Stop all timers
