@@ -762,3 +762,150 @@ body.active .background {
   animation-name: pulse;
   animation-duration: 4s;
 }
+
+/* line 4, ../sass/_page.scss */
+#page a {
+  color: #1967DD;
+  text-decoration: underline;
+}
+/* line 9, ../sass/_page.scss */
+#page .background {
+  width: 100%;
+  border: 25px solid white;
+  background-color: #F1F1F1;
+  height: 100%;
+  min-height: 1200px;
+}
+/* line 16, ../sass/_page.scss */
+#page .background .header {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* line 21, ../sass/_page.scss */
+#page .background .header .logo {
+  float: left;
+}
+/* line 26, ../sass/_page.scss */
+#page .background .header .cta {
+  float: right;
+  margin-top: 47px;
+}
+/* line 30, ../sass/_page.scss */
+#page .background .header .cta a {
+  color: #1967DD;
+  text-decoration: underline;
+}
+@media (min-width: 960px) {
+  /* line 38, ../sass/_page.scss */
+  #page .background .headline {
+    padding-left: 30%;
+  }
+}
+/* line 45, ../sass/_page.scss */
+#page .background .headline h1 {
+  font-size: 48px;
+  color: #000000;
+  line-height: 53px;
+  font-weight: 800;
+}
+@media (min-width: 480px) {
+  /* line 45, ../sass/_page.scss */
+  #page .background .headline h1 {
+    font-size: 62px;
+    line-height: 65px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 45, ../sass/_page.scss */
+  #page .background .headline h1 {
+    font-size: 72px;
+    line-height: 75px;
+  }
+}
+@media (min-width: 960px) {
+  /* line 45, ../sass/_page.scss */
+  #page .background .headline h1 {
+    font-size: 97px;
+    line-height: 100px;
+  }
+}
+/* line 68, ../sass/_page.scss */
+#page .background .content .author {
+  padding-top: 30px;
+}
+@media (min-width: 960px) {
+  /* line 68, ../sass/_page.scss */
+  #page .background .content .author {
+    border: none;
+    float: left;
+    width: 30%;
+    padding-right: 93px;
+    padding-top: 100px;
+  }
+}
+/* line 86, ../sass/_page.scss */
+#page .background .content .author p {
+  font-size: 16px;
+  line-height: 1.2;
+  float: left;
+}
+@media (min-width: 480px) {
+  /* line 86, ../sass/_page.scss */
+  #page .background .content .author p {
+    width: 273px;
+  }
+}
+@media (max-width: 960px) {
+  /* line 96, ../sass/_page.scss */
+  #page .background .content .author img {
+    display: none;
+  }
+}
+@media (min-width: 960px) {
+  /* line 104, ../sass/_page.scss */
+  #page .background .content .post {
+    float: left;
+    width: 70%;
+  }
+}
+/* line 118, ../sass/_page.scss */
+#page .background .content .post p {
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+/* line 125, ../sass/_page.scss */
+#page .background .content .post .intro {
+  margin-top: 30px;
+  font-size: 29px;
+  line-height: 35px;
+}
+/* line 131, ../sass/_page.scss */
+#page .background .content .post img {
+  width: 100%;
+}
+/* line 135, ../sass/_page.scss */
+#page .background .content .post .caption {
+  padding-bottom: 20px;
+}
+/* line 142, ../sass/_page.scss */
+#page .background .footer {
+  width: 100%;
+  margin-top: 204px;
+}
+/* line 146, ../sass/_page.scss */
+#page .background .footer .logo {
+  float: left;
+}
+/* line 151, ../sass/_page.scss */
+#page .background .footer .cta {
+  float: right;
+  margin-top: 47px;
+}
+/* line 155, ../sass/_page.scss */
+#page .background .footer .cta a {
+  color: #1967DD;
+  text-decoration: underline;
+}
