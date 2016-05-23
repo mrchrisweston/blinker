@@ -17,8 +17,10 @@ $ ->
 		# Add class to open the eye
 		$('#eye_area').addClass('eye-area--open')
 
-		# Fire off the alert sound
-		$('.alert-sound').trigger('play')
+		# Fire off the alert sound, if the user hasn't
+		# muted it.
+		if not $('body').hasClass('muted')
+			$('.alert-sound').trigger('play')
 
 		# fire off notification
 		TriggerNotification()
@@ -82,6 +84,16 @@ $ ->
 			StopAllTimers()
 		else
 			$('#start .text').trigger('click')
+
+	# Mute/unmute the sound from firing after 20 mins has elapsed
+	$('.controls .sound').bind 'click', (ev) =>
+
+		if $('body').hasClass('muted')
+			$('body').removeClass('muted')
+			$('.controls .sound').css('background-image', 'url("../img/volume-full.png")')
+		else
+			$('body').addClass('muted')
+			$('.controls .sound').css('background-image', 'url("../img/mute.png")')
 
 	# Hide the intro message and display the Start button
 	$('.close-what').bind 'click', (ev) ->

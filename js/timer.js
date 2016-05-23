@@ -23,7 +23,9 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
       return function() {
         clearInterval(twentyMinInterval);
         $('#eye_area').addClass('eye-area--open');
-        $('.alert-sound').trigger('play');
+        if (!$('body').hasClass('muted')) {
+          $('.alert-sound').trigger('play');
+        }
         TriggerNotification();
         return twentySecInterval = setInterval((function() {
           setTwentyMinInterval();
@@ -36,7 +38,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         $('#eye_area').removeClass('eye-area--open');
         return twentyMinInterval = setInterval((function() {
           setTwentySecInterval();
-        }), 1000);
+        }), 1200000);
       };
     })(this);
     StopAllTimers = (function(_this) {
@@ -70,6 +72,17 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
           return StopAllTimers();
         } else {
           return $('#start .text').trigger('click');
+        }
+      };
+    })(this));
+    $('.controls .sound').bind('click', (function(_this) {
+      return function(ev) {
+        if ($('body').hasClass('muted')) {
+          $('body').removeClass('muted');
+          return $('.controls .sound').css('background-image', 'url("../img/volume-full.png")');
+        } else {
+          $('body').addClass('muted');
+          return $('.controls .sound').css('background-image', 'url("../img/mute.png")');
         }
       };
     })(this));
