@@ -1,8 +1,19 @@
 $ ->
+	usersFirstVisit = () ->
+		# If it's the user's first visit then display
+		# what the waht message automatically.
+		unless localStorage.getItem('hasVisitedBefore')
+
+			# Trigger what the what
+			$('.info').trigger('click')
+
+			# Set local storage
+			localStorage.setItem('hasVisitedBefore', 'true');
+		else
+			return
+
 	TriggerNotification = () =>
 		if Notification
-			console.log 'run notification!'
-
 			notification = new Notification('Blinker',
 				body: 'Take a break from the screen!')
 
@@ -14,8 +25,9 @@ $ ->
 		# The 20 mins has come to an end
 		clearInterval(twentyMinInterval)
 
-		# Add class to open the eye
-		$('#eye_area').addClass('eye-area--open')
+		# Eye open
+		$('.eye-open').show()
+		$('.eye-closed').show()
 
 		# Fire off the alert sound, if the user hasn't
 		# muted it.
@@ -35,8 +47,9 @@ $ ->
 		# Clear the 20 sec timer
 		clearInterval(twentySecInterval)
 
-		# Close eye
-		$('#eye_area').removeClass('eye-area--open')
+		# Eye closed
+		$('.eye-open').hide()
+		$('.eye-closed').show()
 
 		# After 20 minutes execute function
 		twentyMinInterval = setInterval (->
@@ -123,10 +136,7 @@ $ ->
 
 		# ask for notification permission
 		if !Notification
-			console.log('permission not granted')
 			Notification.requestPermission()
-		else
-			console.log 'permission granted'
 		
 		# Start the 20 min timer
 		setTwentyMinInterval()
@@ -165,12 +175,9 @@ $ ->
 				)
 
 	# Notification permission
-	console.log 'ask permission'
 	if Notification.permission != 'granted'
-		console.log('not yet granted')
 		Notification.requestPermission()
-	else
-		console.log('already granted')
-	return
+
+	usersFirstVisit()
 
 

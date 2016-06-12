@@ -5,12 +5,19 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 
 (function() {
   $(function() {
-    var StopAllTimers, TriggerNotification, setTwentyMinInterval, setTwentySecInterval, twentyMinInterval, twentySecInterval;
+    var StopAllTimers, TriggerNotification, setTwentyMinInterval, setTwentySecInterval, twentyMinInterval, twentySecInterval, usersFirstVisit;
+    usersFirstVisit = function() {
+      if (!localStorage.getItem('hasVisitedBefore')) {
+        $('.info').trigger('click');
+        return localStorage.setItem('hasVisitedBefore', 'true');
+      } else {
+
+      }
+    };
     TriggerNotification = (function(_this) {
       return function() {
         var notification;
         if (Notification) {
-          console.log('run notification!');
           return notification = new Notification('Blinker', {
             body: 'Take a break from the screen!'
           });
@@ -22,7 +29,8 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     setTwentySecInterval = (function(_this) {
       return function() {
         clearInterval(twentyMinInterval);
-        $('#eye_area').addClass('eye-area--open');
+        $('.eye-open').show();
+        $('.eye-closed').show();
         if (!$('body').hasClass('muted')) {
           $('.alert-sound').trigger('play');
         }
@@ -35,7 +43,8 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     setTwentyMinInterval = (function(_this) {
       return function() {
         clearInterval(twentySecInterval);
-        $('#eye_area').removeClass('eye-area--open');
+        $('.eye-open').hide();
+        $('.eye-closed').show();
         return twentyMinInterval = setInterval((function() {
           setTwentySecInterval();
         }), 1200000);
@@ -103,10 +112,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         return $('#eye_area').fadeIn(300);
       });
       if (!Notification) {
-        console.log('permission not granted');
         Notification.requestPermission();
-      } else {
-        console.log('permission granted');
       }
       setTwentyMinInterval();
       $('body').addClass('active');
@@ -129,13 +135,10 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         });
       }
     });
-    console.log('ask permission');
     if (Notification.permission !== 'granted') {
-      console.log('not yet granted');
       Notification.requestPermission();
-    } else {
-      console.log('already granted');
     }
+    return usersFirstVisit();
   });
 
 }).call(this);
