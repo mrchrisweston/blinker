@@ -514,8 +514,13 @@ body.active .background {
   width: 80px;
   height: 40px;
   float: left;
+  cursor: pointer;
 }
 /* line 58, ../sass/_home.scss */
+.background .shader #header .logo span {
+  opacity: 0.4;
+}
+/* line 63, ../sass/_home.scss */
 .background .shader #header .info {
   font-size: 14px;
   line-height: 13px;
@@ -523,7 +528,7 @@ body.active .background {
   float: right;
   border-bottom: 1px solid white;
 }
-/* line 69, ../sass/_home.scss */
+/* line 74, ../sass/_home.scss */
 .background .shader #main #start {
   text-align: center;
   width: 300px;
@@ -536,7 +541,7 @@ body.active .background {
   -moz-text-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
   text-shadow: 24px 24px 30px rgba(0, 0, 0, 0.35);
 }
-/* line 84, ../sass/_home.scss */
+/* line 89, ../sass/_home.scss */
 .background .shader #main #start h1 {
   width: 150px;
   line-height: 45px;
@@ -547,7 +552,7 @@ body.active .background {
   letter-spacing: 10px;
   margin-top: 68px;
 }
-/* line 97, ../sass/_home.scss */
+/* line 102, ../sass/_home.scss */
 .background .shader #main #what {
   display: none;
   position: absolute;
@@ -559,74 +564,82 @@ body.active .background {
   width: 240px;
   margin: -150px 0 0 -120px;
 }
-/* line 110, ../sass/_home.scss */
+/* line 115, ../sass/_home.scss */
 .background .shader #main #what h1 {
   font-size: 29px;
   line-height: 0.9;
 }
-/* line 115, ../sass/_home.scss */
+/* line 120, ../sass/_home.scss */
 .background .shader #main #what p {
   font-size: 14px;
   line-height: 1.2;
   margin-top: 15px;
   font-weight: 500;
 }
-/* line 121, ../sass/_home.scss */
+/* line 126, ../sass/_home.scss */
 .background .shader #main #what p.small {
   font-size: 12px;
   margin-top: 10px;
   line-height: 1;
 }
-/* line 127, ../sass/_home.scss */
+/* line 132, ../sass/_home.scss */
 .background .shader #main #what p.close {
   font-size: 18px;
   line-height: 1;
   margin-top: 30px;
 }
-/* line 132, ../sass/_home.scss */
+/* line 137, ../sass/_home.scss */
 .background .shader #main #what p.close span {
   border-bottom: 1px solid white;
   line-height: 17px;
 }
+/* line 143, ../sass/_home.scss */
+.background .shader #main #what p a {
+  text-decoration: underline;
+}
+/* line 146, ../sass/_home.scss */
+.background .shader #main #what p a.close-what {
+  text-decoration: none;
+}
 @media (min-width: 665px) {
-  /* line 97, ../sass/_home.scss */
+  /* line 102, ../sass/_home.scss */
   .background .shader #main #what {
     height: 80px;
     width: 560px;
     height: 300px;
     margin: -150px 0 0 -280px;
   }
-  /* line 146, ../sass/_home.scss */
+  /* line 159, ../sass/_home.scss */
   .background .shader #main #what h1 {
     font-size: 68px;
     line-height: 0.9;
   }
-  /* line 151, ../sass/_home.scss */
+  /* line 164, ../sass/_home.scss */
   .background .shader #main #what p {
     font-size: 21px;
     line-height: 1.2;
     margin-top: 15px;
     font-weight: 500;
   }
-  /* line 157, ../sass/_home.scss */
+  /* line 170, ../sass/_home.scss */
   .background .shader #main #what p.small {
     font-size: 16px;
     margin-top: 10px;
     line-height: 1;
   }
-  /* line 163, ../sass/_home.scss */
+  /* line 176, ../sass/_home.scss */
   .background .shader #main #what p.close {
     font-size: 18px;
     line-height: 1;
     margin-top: 30px;
   }
-  /* line 168, ../sass/_home.scss */
+  /* line 181, ../sass/_home.scss */
   .background .shader #main #what p.close span {
     border-bottom: 1px solid white;
     line-height: 17px;
   }
 }
-/* line 178, ../sass/_home.scss */
+/* line 191, ../sass/_home.scss */
 .background .shader #main #eye_area {
   display: none;
   text-align: center;
@@ -637,7 +650,7 @@ body.active .background {
   top: 50%;
   margin: -45px 0 0 -150px;
 }
-/* line 190, ../sass/_home.scss */
+/* line 203, ../sass/_home.scss */
 .background .shader #main #eye_area .eye-closed {
   position: absolute;
   width: 140px;
@@ -646,7 +659,7 @@ body.active .background {
   top: 50%;
   margin: -14px 0 0 -70px;
 }
-/* line 199, ../sass/_home.scss */
+/* line 212, ../sass/_home.scss */
 .background .shader #main #eye_area .eye-open {
   position: absolute;
   width: 140px;
@@ -655,7 +668,7 @@ body.active .background {
   top: 50%;
   margin: -59px 0 0 -70px;
 }
-/* line 212, ../sass/_home.scss */
+/* line 225, ../sass/_home.scss */
 .background .shader #footer {
   bottom: 25px;
   padding: 20px;
@@ -664,12 +677,12 @@ body.active .background {
   height: 120px;
 }
 @media (min-width: 665px) {
-  /* line 212, ../sass/_home.scss */
+  /* line 225, ../sass/_home.scss */
   .background .shader #footer {
     height: 80px;
   }
 }
-/* line 224, ../sass/_home.scss */
+/* line 237, ../sass/_home.scss */
 .background .shader #footer .controls {
   position: absolute;
   height: 50px;
@@ -681,7 +694,7 @@ body.active .background {
   -moz-box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
 }
-/* line 236, ../sass/_home.scss */
+/* line 249, ../sass/_home.scss */
 .background .shader #footer .controls .sound {
   width: 15px;
   height: 15px;
@@ -693,7 +706,7 @@ body.active .background {
   margin-left: 5px;
   cursor: pointer;
 }
-/* line 248, ../sass/_home.scss */
+/* line 261, ../sass/_home.scss */
 .background .shader #footer .controls .player {
   width: 15px;
   height: 15px;
@@ -705,7 +718,7 @@ body.active .background {
   margin-left: 20px;
   cursor: pointer;
 }
-/* line 261, ../sass/_home.scss */
+/* line 274, ../sass/_home.scss */
 .background .shader #footer .credits {
   color: #fff;
   font-size: 14px;
@@ -718,22 +731,22 @@ body.active .background {
   max-width: 400px;
   text-align: center;
 }
-/* line 273, ../sass/_home.scss */
+/* line 286, ../sass/_home.scss */
 .background .shader #footer .credits a {
   border-bottom: 1px solid white;
 }
-/* line 278, ../sass/_home.scss */
+/* line 291, ../sass/_home.scss */
 .background .shader #footer .share {
   float: right;
   margin-right: 25px;
 }
-/* line 282, ../sass/_home.scss */
+/* line 295, ../sass/_home.scss */
 .background .shader #footer .share div {
   float: left;
   margin-left: 10px;
 }
 
-/* line 292, ../sass/_home.scss */
+/* line 305, ../sass/_home.scss */
 .animated {
   animation-duration: 2.5s;
   animation-fill-mode: both;
@@ -741,23 +754,23 @@ body.active .background {
 }
 
 @keyframes pulse {
-  /* line 299, ../sass/_home.scss */
+  /* line 312, ../sass/_home.scss */
   0% {
     transform: scale(1);
   }
 
-  /* line 300, ../sass/_home.scss */
+  /* line 313, ../sass/_home.scss */
   50% {
     transform: scale(1.1);
   }
 
-  /* line 301, ../sass/_home.scss */
+  /* line 314, ../sass/_home.scss */
   100% {
     transform: scale(1);
   }
 }
 
-/* line 303, ../sass/_home.scss */
+/* line 316, ../sass/_home.scss */
 .pulse {
   animation-name: pulse;
   animation-duration: 4s;

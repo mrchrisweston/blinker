@@ -53,6 +53,11 @@ body.active{
                 width:80px;
                 height:40px;
                 float:left;
+                cursor: pointer;
+
+                span{
+                    opacity:0.4;
+                }
             }
 
             .info{
@@ -132,6 +137,14 @@ body.active{
                         span{
                             border-bottom: 1px solid white;
                             line-height: 17px;
+                        }
+                    }
+
+                    a {
+                        text-decoration:underline;
+
+                        &.close-what{
+                            text-decoration:none;
                         }
                     }
                 }

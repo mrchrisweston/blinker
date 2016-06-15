@@ -37,7 +37,7 @@
 
 		<header id="header">
 
-			<div class="logo">Blin.kr</div>
+			<div class="logo bookmarkme">Blinkr<span>.xyz</span></div>
 
 			<div class="info"><a href="#">What the what?</a></div>
 
@@ -56,10 +56,10 @@
 					Give your eyes a rest will ya!
 				</h1>
 				<p>
-					Inspired by the <a href="/provent-eye-strain.html">20 20 20 rule</a>, this is a little reminder to look 20 feet away from your screen every 20 minutes. Keep your eyes healthy, reduce eye strain and headaches while increasing productivity.
+					Inspired by the <a href="/provent-eye-strain.html">20 20 20 rule</a>, this is a little reminder to look 20 feet away from your screen every 20 minutes. Keep your eyes healthy, reduce eye strain, prevent headaches and increase productivity.
 				</p>
 				<p class="small">
-					No need to stay on this tab, <a href="#">enable the browser notification</a> or just listen out for the sound every 20 mins...
+					No need to stay on this tab, enable the browser notification or just listen out for the sound every 20 mins...
 				</p>
 				<p class="close">
 					<a class="close-what" href="#">
@@ -89,7 +89,7 @@
 				</div>
 				<div class="clear"></div>
 			</div>
-			<div class="credits"> Made by <a href="https://twitter.com/MrChrisWeston"  target="_blank">Chris Weston</a> & <a href="https://twitter.com/jonolock"  target="_blank">Jon Lockley</a> </div>
+			<div class="credits"> Made by <a href="http://www.cweston.co.uk"  target="_blank">Chris Weston</a> & <a href="https://twitter.com/jonolock"  target="_blank">Jon Lockley</a> </div>
 			<div class="share">
 				<div class="twitter">
 
@@ -109,5 +109,19 @@
 
 <!-- Javascript -->
 <script type="text/javascript" src="js/timer.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $(".bookmarkme").click(function() {
+            // Mozilla Firefox Bookmark
+            if ('sidebar' in window && 'addPanel' in window.sidebar) { 
+                window.sidebar.addPanel(location.href,document.title,"");
+            } else if( /*@cc_on!@*/false) { // IE Favorite
+                window.external.AddFavorite(location.href,document.title); 
+            } else { // webkit - safari/chrome
+                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+            }
+        });
+    });
+</script>
 </body>
 </html>
