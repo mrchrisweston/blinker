@@ -5,16 +5,28 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 
 (function() {
   $(function() {
-    var StopAllTimers, TriggerNotification, setTwentyMinInterval, setTwentySecInterval, twentyMinInterval, twentySecInterval, usersFirstVisit;
+    var StopAllTimers, setTwentyMinInterval, setTwentySecInterval, triggerNotification, triggerTwentyMinsSound, triggerTwentySecondSound, twentyMinInterval, twentySecInterval, usersFirstVisit;
+    twentyMinInterval = null;
+    twentySecInterval = null;
     usersFirstVisit = function() {
       if (!localStorage.getItem('hasVisitedBefore')) {
         $('.info').trigger('click');
         return localStorage.setItem('hasVisitedBefore', 'true');
-      } else {
-
       }
     };
-    TriggerNotification = (function(_this) {
+    triggerTwentyMinsSound = (function(_this) {
+      return function() {
+        console.log('min sound');
+        return $('.alert-sound').trigger('play');
+      };
+    })(this);
+    triggerTwentySecondSound = (function(_this) {
+      return function() {
+        console.log('second sound');
+        return $('.alert-sound').trigger('play');
+      };
+    })(this);
+    triggerNotification = (function(_this) {
       return function() {
         var notification;
         if (Notification) {
@@ -24,18 +36,19 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         }
       };
     })(this);
-    twentyMinInterval = null;
-    twentySecInterval = null;
     setTwentySecInterval = (function(_this) {
       return function() {
         clearInterval(twentyMinInterval);
         $('.eye-open').show();
-        $('.eye-closed').show();
+        $('.eye-closed').hide();
         if (!$('body').hasClass('muted')) {
-          $('.alert-sound').trigger('play');
+          triggerTwentyMinsSound();
         }
-        TriggerNotification();
+        triggerNotification();
         return twentySecInterval = setInterval((function() {
+          if (!$('body').hasClass('muted')) {
+            triggerTwentySecondSound();
+          }
           setTwentyMinInterval();
         }), 20000);
       };
@@ -80,7 +93,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
           $('#start').show();
           return StopAllTimers();
         } else {
-          return $('#start .text').trigger('click');
+          return $('#start a').trigger('click');
         }
       };
     })(this));
