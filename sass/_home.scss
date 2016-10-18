@@ -3,7 +3,7 @@
 body.active{
     
     .background{
-        background: linear-gradient(270deg, #40aff3, #3bbef1, #67ba77, #b24545, #1e6de4);
+        background: linear-gradient(270deg, #ffffff, #3bbef1, #67ba77, #d693ce, #ffffff);
         background-size: 1000% 1000%;
 
         -webkit-animation: Background 2s ease infinite;
@@ -32,7 +32,7 @@ body.active{
     height:100vh;
     width:100vw;
     border:25px solid white;
-    background-color: #1e77e4;
+    background-color: #f0f0f1;
 
     .shader{
         height:100vh;
@@ -44,7 +44,7 @@ body.active{
         background-position: right bottom;
 
         #header{
-            color:#fff;
+            color:#1e6de4;
             width:100%;
             position:relative;
             padding:20px;
@@ -65,7 +65,7 @@ body.active{
                 line-height: 13px;
                 text-align:right;
                 float:right;
-                border-bottom:1px solid white;
+                border-bottom:1px solid #1e6de4;
             }
         }
 
@@ -90,9 +90,9 @@ body.active{
                     width:150px;
                     line-height:45px;
                     margin:0 auto;
-                    color:#fff;
+                    color:#1e6de4;
                     font-size:36px;
-                    border-bottom:3px solid white;
+                    border-bottom:3px solid #1e6de4;
                     letter-spacing: 10px;
                     margin-top: 68px;
                 }
@@ -106,7 +106,7 @@ body.active{
                 top:50%;
                 left:50%;
                 text-align:center;
-                color:#fff;
+                color:#1e6de4;
 
                 height:300px;
                 width:240px;
@@ -135,7 +135,7 @@ body.active{
                         margin-top: 30px;
 
                         span{
-                            border-bottom: 1px solid white;
+                            border-bottom: 1px solid #1e6de4;
                             line-height: 17px;
                         }
                     }
@@ -179,7 +179,7 @@ body.active{
                             margin-top: 30px;
 
                             span{
-                                border-bottom: 1px solid white;
+                                border-bottom: 1px solid #1e6de4;
                                 line-height: 17px;
                             }
                         }
@@ -241,9 +241,9 @@ body.active{
                 padding: 17px;
                 top:0;
                 background-color:#fff;
-                -webkit-box-shadow: 24px 24px 30px 0px rgba(0,0,0,0.15);
-                -moz-box-shadow: 24px 24px 30px 0px rgba(0,0,0,0.15);
-                box-shadow: 24px 24px 30px 0px rgba(0,0,0,0.15);
+                -webkit-box-shadow: 15px 11px 40px 0px rgba(0,0,0,0.15);
+                -moz-box-shadow: 15px 11px 40px 0px rgba(0,0,0,0.15);
+                box-shadow: 15px 11px 40px 0px rgba(0,0,0,0.15);
 
 
                 .sound{
@@ -272,7 +272,7 @@ body.active{
             }
 
             .credits{
-                color:#fff;
+                color:#1e6de4;
                 font-size:14px;
                 bottom:20px;
                 position:absolute;
@@ -284,7 +284,7 @@ body.active{
                 text-align: center;
 
                 a{
-                    border-bottom:1px solid white;
+                    border-bottom:1px solid #1e6de4;
                 }
             }
 
@@ -295,6 +295,10 @@ body.active{
                 div{
                     float:left;
                     margin-left:10px;
+
+                    &.twitter{
+                        padding-top: 10px;
+                    }
                 }
             }
         }

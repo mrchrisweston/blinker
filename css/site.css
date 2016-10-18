@@ -105,7 +105,7 @@ a abbr {
 
 /* line 44, ../sass/_formatting.scss */
 a {
-  color: #ffffff;
+  color: #1e6de4;
   text-decoration: none;
   -moz-transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -427,7 +427,7 @@ a:hover {
 /* -- Home page -- */
 /* line 5, ../sass/_home.scss */
 body.active .background {
-  background: linear-gradient(270deg, #40aff3, #3bbef1, #67ba77, #b24545, #1e6de4);
+  background: linear-gradient(270deg, #ffffff, #3bbef1, #67ba77, #d693ce, #ffffff);
   background-size: 1000% 1000%;
   -webkit-animation: Background 2s ease infinite;
   -moz-animation: Background 2s ease infinite;
@@ -490,7 +490,7 @@ body.active .background {
   height: 100vh;
   width: 100vw;
   border: 25px solid white;
-  background-color: #1e77e4;
+  background-color: #f0f0f1;
 }
 /* line 37, ../sass/_home.scss */
 .background .shader {
@@ -504,7 +504,7 @@ body.active .background {
 }
 /* line 46, ../sass/_home.scss */
 .background .shader #header {
-  color: #fff;
+  color: #1e6de4;
   width: 100%;
   position: relative;
   padding: 20px;
@@ -526,7 +526,7 @@ body.active .background {
   line-height: 13px;
   text-align: right;
   float: right;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #1e6de4;
 }
 /* line 74, ../sass/_home.scss */
 .background .shader #main #start {
@@ -546,9 +546,9 @@ body.active .background {
   width: 150px;
   line-height: 45px;
   margin: 0 auto;
-  color: #fff;
+  color: #1e6de4;
   font-size: 36px;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid #1e6de4;
   letter-spacing: 10px;
   margin-top: 68px;
 }
@@ -559,7 +559,7 @@ body.active .background {
   top: 50%;
   left: 50%;
   text-align: center;
-  color: #fff;
+  color: #1e6de4;
   height: 300px;
   width: 240px;
   margin: -150px 0 0 -120px;
@@ -590,7 +590,7 @@ body.active .background {
 }
 /* line 137, ../sass/_home.scss */
 .background .shader #main #what p.close span {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #1e6de4;
   line-height: 17px;
 }
 /* line 143, ../sass/_home.scss */
@@ -635,7 +635,7 @@ body.active .background {
   }
   /* line 181, ../sass/_home.scss */
   .background .shader #main #what p.close span {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #1e6de4;
     line-height: 17px;
   }
 }
@@ -690,9 +690,9 @@ body.active .background {
   padding: 17px;
   top: 0;
   background-color: #fff;
-  -webkit-box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 24px 24px 30px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 15px 11px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 15px 11px 40px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 15px 11px 40px 0px rgba(0, 0, 0, 0.15);
 }
 /* line 249, ../sass/_home.scss */
 .background .shader #footer .controls .sound {
@@ -720,7 +720,7 @@ body.active .background {
 }
 /* line 274, ../sass/_home.scss */
 .background .shader #footer .credits {
-  color: #fff;
+  color: #1e6de4;
   font-size: 14px;
   bottom: 20px;
   position: absolute;
@@ -733,7 +733,7 @@ body.active .background {
 }
 /* line 286, ../sass/_home.scss */
 .background .shader #footer .credits a {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #1e6de4;
 }
 /* line 291, ../sass/_home.scss */
 .background .shader #footer .share {
@@ -745,8 +745,12 @@ body.active .background {
   float: left;
   margin-left: 10px;
 }
+/* line 299, ../sass/_home.scss */
+.background .shader #footer .share div.twitter {
+  padding-top: 10px;
+}
 
-/* line 305, ../sass/_home.scss */
+/* line 309, ../sass/_home.scss */
 .animated {
   animation-duration: 2.5s;
   animation-fill-mode: both;
@@ -754,23 +758,23 @@ body.active .background {
 }
 
 @keyframes pulse {
-  /* line 312, ../sass/_home.scss */
+  /* line 316, ../sass/_home.scss */
   0% {
     transform: scale(1);
   }
 
-  /* line 313, ../sass/_home.scss */
+  /* line 317, ../sass/_home.scss */
   50% {
     transform: scale(1.1);
   }
 
-  /* line 314, ../sass/_home.scss */
+  /* line 318, ../sass/_home.scss */
   100% {
     transform: scale(1);
   }
 }
 
-/* line 316, ../sass/_home.scss */
+/* line 320, ../sass/_home.scss */
 .pulse {
   animation-name: pulse;
   animation-duration: 4s;
