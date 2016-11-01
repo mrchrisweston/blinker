@@ -24,7 +24,7 @@ $ ->
         if Notification
             notification = new Notification('Blynker',
                 body: 'Take a break from the screen!'
-                icon: ''
+                icon: '../img/favicon.ico/favicon-96x96.png'
                 )
 
     setTwentySecInterval = () =>

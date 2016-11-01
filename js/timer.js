@@ -30,7 +30,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         if (Notification) {
           return notification = new Notification('Blynker', {
             body: 'Take a break from the screen!',
-            icon: ''
+            icon: '../img/favicon.ico/favicon-96x96.png'
           });
         }
       };
