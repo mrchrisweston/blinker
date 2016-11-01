@@ -16,13 +16,11 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     };
     triggerTwentyMinsSound = (function(_this) {
       return function() {
-        console.log('min sound');
         return $('.alert-sound').trigger('play');
       };
     })(this);
     triggerTwentySecondSound = (function(_this) {
       return function() {
-        console.log('second sound');
         return $('.alert-sound').trigger('play');
       };
     })(this);
@@ -30,8 +28,9 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
       return function() {
         var notification;
         if (Notification) {
-          return notification = new Notification('Blinker', {
-            body: 'Take a break from the screen!'
+          return notification = new Notification('Blynker', {
+            body: 'Take a break from the screen!',
+            icon: ''
           });
         }
       };

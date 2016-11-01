@@ -15,17 +15,17 @@ $ ->
             localStorage.setItem('hasVisitedBefore', 'true')
 
     triggerTwentyMinsSound = () =>
-        console.log 'min sound'
         $('.alert-sound').trigger('play')
 
     triggerTwentySecondSound = () =>
-        console.log 'second sound'
         $('.alert-sound').trigger('play')
 
     triggerNotification = () =>
         if Notification
-            notification = new Notification('Blinker',
-                body: 'Take a break from the screen!')
+            notification = new Notification('Blynker',
+                body: 'Take a break from the screen!'
+                icon: ''
+                )
 
     setTwentySecInterval = () =>
         # The 20 mins has come to an end
